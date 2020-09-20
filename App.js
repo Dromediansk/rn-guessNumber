@@ -15,7 +15,7 @@ const fetchFonts = () => {
   });
 };
 
-export default function App() {
+const App = () => {
   const [userNumber, setUserNumber] = useState();
   const [guessRounds, setGuessRounds] = useState(0);
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -52,8 +52,8 @@ export default function App() {
   } else if (guessRounds > 0) {
     content = (
       <GameOverScreen
-        roundsNumber={guessRounds}
-        userNumber={userNumber}
+        roundsNumber={1}
+        userNumber={1}
         onRestart={configureNewGameHandler}
       />
     );
@@ -65,10 +65,12 @@ export default function App() {
       {content}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
 });
+
+export default App;
